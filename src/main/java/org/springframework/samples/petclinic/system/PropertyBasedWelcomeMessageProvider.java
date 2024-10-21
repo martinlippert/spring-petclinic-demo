@@ -17,9 +17,11 @@
  package org.springframework.samples.petclinic.system;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @ConditionalOnProperty("petclinic.s1.message")
+@Profile({"demo", "cloud"})
 @Component
 public class PropertyBasedWelcomeMessageProvider implements WelcomeMessageProvider {
 
